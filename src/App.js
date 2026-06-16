@@ -1,9 +1,24 @@
 import logo from './logo.svg';
 import './App.css';
 
+// eslint-disable-next-line no-unused-vars
+import {Home} from './Home';
+// eslint-disable-next-line no-unused-vars
+import {Department} from './Department';
+import {Employee} from './Employee';
+import {BrowserRouter, Route, Routes} from 'react-router-dom';
+
+
 function App() {
   return (
     <div className="App">
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/department" element={<Department />} />
+          <Route path="/employee" element={<Employee />} />
+        </Routes>
+      </BrowserRouter>
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <p>
