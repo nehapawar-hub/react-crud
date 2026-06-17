@@ -56,11 +56,12 @@ export class Department extends Component {
     }
 
     refreshList(){
-        fetch(variables.API_URL+'department')
-        .then(response=>response.json())
-        .then(data=>{
-            this.setState({departments:data,departmentsWithoutFilter:data});
-        });
+       fetch(variables.API_URL + 'department')
+        .then(response => response.text())
+        .then(data => {
+        console.log(data);
+  })
+  .catch(err => console.log(err));
     }
 
     componentDidMount(){
