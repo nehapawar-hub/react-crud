@@ -4,7 +4,7 @@ import './App.css';
 import { Home } from './Home';
 import { Department } from './Department';
 import { Employee } from './Employee';
-import { BrowserRouter, Route, Switch, NavLink } from 'react-router-dom';
+import { BrowserRouter as Router, Switch, Route, Routes } from "react-router-dom";
 
 function App() {
   return (
@@ -34,11 +34,12 @@ function App() {
           </ul>
         </nav>
 
-        <Switch>
-          <Route path='/home' component={Home}></Route>
-          <Route path='/department' component={Department}></Route>
-          <Route path='/employee' component={Employee}></Route>
-        </Switch>
+        <Routes>
+          <Route path='/home' element={<Home />} />
+          <Route path='/department' element={<Department />} />
+          <Route path='/employee' element={<Employee />} />
+          <Route path='/variable' element={<Variable />} />
+        </Routes>
       </div>
     </BrowserRouter>
   );
