@@ -4,6 +4,7 @@ import './App.css';
 import { Home } from './Home';
 import { Department } from './Department';
 import { Employee } from './Employee';
+import { Variables } from './Variables';
 import { BrowserRouter as Router, Switch, Route, Routes } from "react-router-dom";
 
 function App() {
@@ -31,6 +32,7 @@ function App() {
                 Employee
               </NavLink>
             </li>
+           
           </ul>
         </nav>
 
@@ -38,10 +40,12 @@ function App() {
           <Route path='/home' element={<Home />} />
           <Route path='/department' element={<Department />} />
           <Route path='/employee' element={<Employee />} />
-          <Route path='/variable' element={<Variable />} />
+          <Route path='/variables' element={<Variables />} />
         </Routes>
       </div>
     </BrowserRouter>
   );
 }
+
+
 export default App;
