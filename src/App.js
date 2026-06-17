@@ -4,8 +4,8 @@ import './App.css';
 import { Home } from './Home';
 import { Department } from './Department';
 import { Employee } from './Employee';
-import { Variables } from './Variables';
-import { BrowserRouter as Router, Switch, Route, Routes } from "react-router-dom";
+import { variables } from './Variables';
+import { BrowserRouter as Route, Routes,NavLink } from "react-router-dom";
 
 function App() {
   return (
