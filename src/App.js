@@ -1,50 +1,64 @@
-import logo from './logo.svg';
-import './App.css';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
-import { Home } from './Home';
-import { Department } from './Department';
-import { Employee } from './Employee';
-import { variables } from './Variables';
+import "./App.css";
+import React from 'react';
+import { Home } from "./Home";
+import { Department } from "./Department";
+import { Employee } from "./Employee";
+
+// import { variables } from "./Variables"; // Unused for now, uncomment if needed
+
 import { BrowserRouter, Routes, Route, NavLink } from "react-router-dom";
 
 function App() {
+   debugger;
+   console.log("App component rendered");
   return (
+   
     <BrowserRouter>
       <div className="App container">
-        <h3 className="d-flex justify-content-center m-3">
-          My React App
-        </h3>
+        <h3 className="text-center my-4">My React App</h3>
 
-        <nav className="navbar navbar-expand-sm bg-light navbar-dark">
-          <ul className="navbar-nav">
-            <li className="nav-item m-1">
-              <NavLink className="btn btn-light btn-outline-primary" to="/home">
+        <nav className="navbar navbar-expand-lg navbar-dark bg-dark rounded mb-4">
+          <div className="container-fluid">
+            <NavLink className="navbar-brand" to="/">
+              Employee CRUD
+            </NavLink>
+
+            <div className="navbar-nav">
+              {/* Changed 'to' path to "/" to match the home route layout */}
+              <NavLink className="nav-link" to="/">
                 Home
               </NavLink>
-            </li>
-            <li className="nav-item m-1">
-              <NavLink className="btn btn-light btn-outline-primary" to="/department">
+
+              <NavLink className="nav-link" to="/department">
                 Department
               </NavLink>
-            </li>
-            <li className="nav-item m-1">
-              <NavLink className="btn btn-light btn-outline-primary" to="/employee">
+
+              <NavLink className="nav-link" to="/employee">
                 Employee
               </NavLink>
-            </li>
-           
-          </ul>
+
+               <NavLink className="nav-link" to="/account">
+                Account
+              </NavLink>
+            </div>
+          </div>
         </nav>
 
-        <Routes>
-          <Route path='/home' element={<Home />} />
-          <Route path='/department' element={<Department />} />
-          <Route path='/employee' element={<Employee />} />         
-        </Routes>
+        {/* Content Area */}
+        <div className="container p-3 border rounded bg-light">
+          <Routes>
+            {/* Changed path from "/home" to "/" so the landing page actually loads something */}
+            <Route path="/" element={<Home />} />
+            <Route path="/department" element={<Department />} />
+            <Route path="/employee" element={<Employee />} />
+       
+          </Routes>
+        </div>
       </div>
     </BrowserRouter>
   );
 }
-
 
 export default App;

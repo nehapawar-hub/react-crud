@@ -4,7 +4,9 @@ export class Home extends Component {
     render() {
         return(
             <div className="mt-5 d-flex justify-content-left">
-                Home page.
+               <h3>Home page</h3>
+               <p>This is the home page of the application.</p>
+
             </div>
         )
     }
